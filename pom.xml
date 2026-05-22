@@ -13,9 +13,20 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>routeplanner</name>
 	<description>Route Planner - Traffic Analyzer</description>
-	<url/>
+	<url>https://github.com/martinsladek/routeplannertest</url>
 	<developers>
-		<developer/>
+		<developer>
+			<id>martinsladek</id>
+			<name>Martin Sládek</name>
+			<email>infowwwnoreply@martinsladek.com</email>
+			<organization>Self-employed</organization>
+			<organizationUrl>http://www.martinsladek.com/</organizationUrl>
+			<roles>
+				<role>developer</role>
+				<role>analyst</role>
+				<role>architect</role>
+			</roles>
+		</developer>
 	</developers>
 	<properties>
 		<java.version>17</java.version>
