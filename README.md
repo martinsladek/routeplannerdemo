@@ -79,13 +79,20 @@ For these reasons, the BFS‑based solution is considered the **correct and inte
 
 ---
 
-## Build
+## 🚀 Build and run
 
+### Build
+
+You can build project with your own local Maven installation:
 ```
 mvn clean install
 ```
+or using Maven wrapper:
+```
+./mvnw clean package
+```
 
-## Run
+### Run
 
 ```
 mvn spring-boot:run
@@ -97,7 +104,7 @@ The application runs at:
 http://localhost:8080
 ```
 
-## Example call
+### Example call
 
 ```
 curl -i -X GET -H "Accept: application/json" http://localhost:8080/routing/CZE/ITA
@@ -105,7 +112,50 @@ curl -i -X GET -H "Accept: application/json" http://localhost:8080/routing/CZE/I
 
 ---
 
-## Project Structure
+## 🐳 Docker
+
+### Build image
+```
+docker build -t routeplanner .
+```
+
+### Run container
+```
+docker run --name routeplanner -p 8080:8080 routeplanner
+```
+
+### Example call
+
+```
+curl -i -X GET -H "Accept: application/json" http://localhost:8080/routing/CZE/ITA
+```
+
+### Clean up
+```
+docker stop routeplanner
+docker rm routeplanner
+docker rmi routeplanner
+```
+
+
+---
+
+## 📄 License
+
+MIT License
+
+---
+
+## 🧪 Tests
+
+### Unit test BFS (mock CountryService)
+```
+./mvnw test
+```
+
+---
+
+## 📁 Project Structure
 
 ```
 src/main/java/com/martinsladek/demo/routeplanner
@@ -118,6 +168,17 @@ src/main/java/com/martinsladek/demo/routeplanner
  │     └── Country.java
  └── RoutePlannerApplication.java
 ```
+
+---
+
+## ⚙️ GitHub Actions (CI)
+
+Workflow: `.github/workflows/build.yml`
+
+- build
+- test
+- JDK 17
+- Maven Wrapper
 
 ---
 
