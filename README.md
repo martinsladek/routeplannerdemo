@@ -97,6 +97,12 @@ The application runs at:
 http://localhost:8080
 ```
 
+## Example call
+
+```
+curl -i -X GET -H "Accept: application/json" http://localhost:8080/routing/CZE/ITA
+```
+
 ---
 
 ## Project Structure
