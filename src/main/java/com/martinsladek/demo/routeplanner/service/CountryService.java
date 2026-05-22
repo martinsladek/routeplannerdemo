@@ -1,7 +1,7 @@
-package com.martinsladek.test.routeplanner.service;
+package com.martinsladek.demo.routeplanner.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.martinsladek.test.routeplanner.model.Country;
+import com.martinsladek.demo.routeplanner.model.Country;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 

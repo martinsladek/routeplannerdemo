@@ -1,4 +1,4 @@
-package com.martinsladek.test.routeplanner;
+package com.martinsladek.demo.routeplanner;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.martinsladek.test.routeplanner;
+package com.martinsladek.demo.routeplanner;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

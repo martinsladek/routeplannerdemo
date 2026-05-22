@@ -1,4 +1,4 @@
-package com.martinsladek.test.routeplanner.service;
+package com.martinsladek.demo.routeplanner.service;
 
 import org.springframework.stereotype.Service;
 

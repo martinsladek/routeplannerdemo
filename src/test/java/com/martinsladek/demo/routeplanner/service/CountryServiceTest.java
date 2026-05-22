@@ -1,6 +1,6 @@
-package com.martinsladek.test.routeplanner.service;
+package com.martinsladek.demo.routeplanner.service;
 
-import com.martinsladek.test.routeplanner.model.Country;
+import com.martinsladek.demo.routeplanner.model.Country;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.beans.factory.annotation.Autowired;

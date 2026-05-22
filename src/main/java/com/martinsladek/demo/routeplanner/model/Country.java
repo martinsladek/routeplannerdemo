@@ -1,4 +1,4 @@
-package com.martinsladek.test.routeplanner.model;
+package com.martinsladek.demo.routeplanner.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

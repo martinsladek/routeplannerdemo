@@ -102,7 +102,7 @@ http://localhost:8080
 ## Project Structure
 
 ```
-src/main/java
+src/main/java/com/martinsladek/demo/routeplanner
  ├── controller
  │     └── RoutingController.java
  ├── service

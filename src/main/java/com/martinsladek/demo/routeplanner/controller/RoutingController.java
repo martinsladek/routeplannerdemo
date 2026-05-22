@@ -1,6 +1,6 @@
-package com.martinsladek.test.routeplanner.controller;
+package com.martinsladek.demo.routeplanner.controller;
 
-import com.martinsladek.test.routeplanner.service.RoutingService;
+import com.martinsladek.demo.routeplanner.service.RoutingService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

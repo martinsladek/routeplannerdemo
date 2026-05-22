@@ -1,4 +1,4 @@
-package com.martinsladek.test.routeplanner.model;
+package com.martinsladek.demo.routeplanner.model;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
