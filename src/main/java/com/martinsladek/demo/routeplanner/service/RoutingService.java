@@ -1,5 +1,7 @@
 package com.martinsladek.demo.routeplanner.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -9,6 +11,8 @@ public class RoutingService {
 
     private final CountryService countryService;
 
+    private static final Logger log = LoggerFactory.getLogger(RoutingService.class);
+
     public RoutingService(CountryService countryService) {
         this.countryService = countryService;
     }
@@ -17,7 +21,10 @@ public class RoutingService {
 
         Map<String, List<String>> graph = countryService.getGraph();
 
+        log.info("Searching route from {} to {}", origin, destination);
+
         if (!graph.containsKey(origin) || !graph.containsKey(destination)) {
+            log.warn("No route found from {} to {}", origin, destination);
             return null;
         }
 
@@ -32,8 +39,12 @@ public class RoutingService {
             String current = queue.poll();
 
             if (current.equals(destination)) {
-                return buildPath(parent, origin, destination);
+                var result = buildPath(parent, origin, destination);
+                log.info("Route found: {}", result);
+                return result;
             }
+
+            log.debug("Neighbors of {}: {}", current, graph.get(current));
 
             for (String neighbor : graph.get(current)) {
                 if (!visited.contains(neighbor)) {
@@ -44,6 +55,7 @@ public class RoutingService {
             }
         }
 
+        log.warn("No route found from {} to {}", origin, destination);
         return null;
     }
 
