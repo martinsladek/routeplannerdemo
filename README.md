@@ -5,7 +5,7 @@ The service loads a public dataset of countries, builds a graph of neighboring s
 
 ---
 
-## Dataset
+## 📊 Dataset
 
 The application uses the following dataset:
 
@@ -22,7 +22,7 @@ Each country entry contains, among other fields:
 
 ---
 
-## API
+## 🔌 API
 
 ### `GET /routing/{origin}/{destination}`
 
@@ -47,7 +47,7 @@ If no land route exists, the service returns **HTTP 400**.
 
 ---
 
-## Why BFS?
+## 🧠 Why BFS?
 
 The dataset provides only **which countries border each other**, but does **not** include:
 
@@ -62,7 +62,7 @@ BFS is the optimal algorithm for finding the shortest path in an unweighted grap
 
 ---
 
-## Note on Weighted Routing
+## 🗺️ Note on Weighted Routing
 
 A weighted routing variant was explored, using geographic distances between capital cities as edge weights.
 
@@ -79,7 +79,7 @@ For these reasons, the BFS‑based solution is considered the **correct and inte
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 src/main/java/com/martinsladek/demo/routeplanner
@@ -95,27 +95,32 @@ src/main/java/com/martinsladek/demo/routeplanner
 
 ---
 
-## Build and run
+## 📦 Build and run
 
 ### Build
 
-You can build project with your own local Maven installation:
+Using local Maven:
+
 ```
 mvn clean install
 ```
 
-or using Maven wrapper:
+Using Maven wrapper:
+
 ```
 ./mvnw clean package
 ```
 
 ### Run
 
+Using local Maven:
+
 ```
 mvn spring-boot:run
 ```
 
-or using Maven wrapper:
+Using Maven wrapper:
+
 ```
 ./mvnw spring-boot:run
 ```
@@ -134,23 +139,26 @@ curl -i -X GET -H "Accept: application/json" http://localhost:8080/routing/CZE/I
 
 ---
 
-## Tests
+## 🧪 Tests
 
 ### Unit test BFS (mock CountryService)
+
 ```
 ./mvnw test
 ```
 
 ---
 
-## Docker
+## 🐳 Docker
 
 ### Build image
+
 ```
 docker build -t routeplanner .
 ```
 
 ### Run container
+
 ```
 docker run --name routeplanner -p 8080:8080 routeplanner
 ```
@@ -162,14 +170,16 @@ curl -i -X GET -H "Accept: application/json" http://localhost:8080/routing/CZE/I
 ```
 
 ### Clean up
+
 ```
 docker stop routeplanner
 docker rm routeplanner
 docker rmi routeplanner
 ```
+
 ---
 
-## GitHub Actions (CI)
+## ⚙️ GitHub Actions (CI)
 
 Workflow: `.github/workflows/build.yml`
 
@@ -180,14 +190,13 @@ Workflow: `.github/workflows/build.yml`
 
 ---
 
-## License
+## 📄 License
 
 MIT License
 
-
 ---
 
-## Summary
+## 📝 Summary
 
 - The BFS solution is accurate, fast, and aligned with the dataset and assignment requirements.
 - Weighted routing was implemented as an experimental extension, but the dataset is not suitable for realistic weighted pathfinding.
