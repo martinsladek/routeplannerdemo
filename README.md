@@ -79,7 +79,23 @@ For these reasons, the BFS‑based solution is considered the **correct and inte
 
 ---
 
-## 🚀 Build and run
+## Project Structure
+
+```
+src/main/java/com/martinsladek/demo/routeplanner
+ ├── controller
+ │     └── RoutingController.java
+ ├── service
+ │     ├── CountryService.java
+ │     └── RoutingService.java
+ ├── model
+ │     └── Country.java
+ └── RoutePlannerApplication.java
+```
+
+---
+
+## Build and run
 
 ### Build
 
@@ -87,6 +103,7 @@ You can build project with your own local Maven installation:
 ```
 mvn clean install
 ```
+
 or using Maven wrapper:
 ```
 ./mvnw clean package
@@ -96,6 +113,11 @@ or using Maven wrapper:
 
 ```
 mvn spring-boot:run
+```
+
+or using Maven wrapper:
+```
+./mvnw spring-boot:run
 ```
 
 The application runs at:
@@ -112,7 +134,16 @@ curl -i -X GET -H "Accept: application/json" http://localhost:8080/routing/CZE/I
 
 ---
 
-## 🐳 Docker
+## Tests
+
+### Unit test BFS (mock CountryService)
+```
+./mvnw test
+```
+
+---
+
+## Docker
 
 ### Build image
 ```
@@ -136,42 +167,9 @@ docker stop routeplanner
 docker rm routeplanner
 docker rmi routeplanner
 ```
-
-
 ---
 
-## 📄 License
-
-MIT License
-
----
-
-## 🧪 Tests
-
-### Unit test BFS (mock CountryService)
-```
-./mvnw test
-```
-
----
-
-## 📁 Project Structure
-
-```
-src/main/java/com/martinsladek/demo/routeplanner
- ├── controller
- │     └── RoutingController.java
- ├── service
- │     ├── CountryService.java
- │     └── RoutingService.java
- ├── model
- │     └── Country.java
- └── RoutePlannerApplication.java
-```
-
----
-
-## ⚙️ GitHub Actions (CI)
+## GitHub Actions (CI)
 
 Workflow: `.github/workflows/build.yml`
 
@@ -179,6 +177,13 @@ Workflow: `.github/workflows/build.yml`
 - test
 - JDK 17
 - Maven Wrapper
+
+---
+
+## License
+
+MIT License
+
 
 ---
 
